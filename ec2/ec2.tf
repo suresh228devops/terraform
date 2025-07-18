@@ -11,6 +11,7 @@ resource "aws_instance" "roboshop" {
 
 resource "aws_security_group" "allow_all" {
   name        = "allow_all"
+  #name        = "allow_all_change
   description = "Allow all traffic"
 
   ingress {
@@ -32,4 +33,12 @@ resource "aws_security_group" "allow_all" {
   tags = {
     Name = "allow-all"
   }
+
+#Session-49
+  /* lifecycle {
+      create_before_destroy = true
+      #1.it will create another resource and 
+      #2.replace in instance with new sg
+      #3.then remove old sg
+    }  */ 
 }
